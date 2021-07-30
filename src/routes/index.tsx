@@ -18,7 +18,7 @@ function Routes() {
 
     return(
         <NavigationContainer>
-            {true? <AppRoutes/> : <AuthRoutes/>}
+            {false? <AppRoutes/> : <AuthRoutes/>}
         </NavigationContainer>
     )
 }

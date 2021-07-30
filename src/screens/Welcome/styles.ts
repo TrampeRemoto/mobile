@@ -1,5 +1,6 @@
 import styled from "styled-components/native";
 import { RectButton } from 'react-native-gesture-handler'
+import { Image } from "react-native";
 
 export const Container = styled.View`
     background: #18191F;
@@ -65,11 +66,28 @@ export const Button = styled(RectButton)`
     
     padding: 15px 25px;
     border-radius: 10px;
+    color:#ffffff;
 
     /* box-shadow: 10px 5px 5px #000; */
+`
+
+export const LoginButton = styled(RectButton)`
+    /* background: #8A3AC8; */
+    color:#8A3AC8;
+    
+    
 `
 
 export const ButtonText = styled.Text`
     color:#ffffff;
     font-size: 15px;
+`
+export const LoginButtonText = styled.Text`
+    color:#8A3AC8;
+    font-size: 15px;
+    padding: 15px 25px;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 10px;
+    border-color:#8A3AC8;
 `

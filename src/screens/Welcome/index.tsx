@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { Image } from 'react-native';
+import { useNavigation } from '@react-navigation/native'
 
 import dots from '../../../assets/img/dots.png'
 import welcomeimage from '../../../assets/img/welcomeimage.png'
@@ -8,6 +9,8 @@ import welcomeimage from '../../../assets/img/welcomeimage.png'
 import * as S from './styles'
 
 function Welcome() {
+  const navigation = useNavigation()
+
   return (
     <S.Container >
       <StatusBar style="light"/>
@@ -18,7 +21,7 @@ function Welcome() {
 
       <S.TextContainer>
         <S.Dots>
-          <Image source={dots}/>
+          <Image source={dots} width={60}/>
         </S.Dots>
 
         <S.Title>Encontre o emprego dos seus sonhos</S.Title>
@@ -29,16 +32,19 @@ function Welcome() {
         </S.SubTitle>
         
         <S.ButtonContainer>
-        <S.Button onPress={()=>{}}>
-          <S.ButtonText>
-            Começar
-            </S.ButtonText>
+
+          <S.Button onPress={()=>{navigation.navigate('Register')}}>
+            <S.ButtonText>
+              Começar
+              </S.ButtonText>
           </S.Button>
-        <S.Button>
-          <S.ButtonText>
-            Já tenho uma conta
-          </S.ButtonText>
-        </S.Button>
+
+          <S.LoginButton>
+            <S.LoginButtonText onPress={()=>{navigation.navigate('Login')}}>
+              Já tenho uma conta
+            </S.LoginButtonText>
+          </S.LoginButton>
+
         </S.ButtonContainer>
 
       </S.TextContainer>
