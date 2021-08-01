@@ -6,6 +6,7 @@ export const Container = styled.View`
  flex-direction: column;
 
  width: 95%;
+ margin-bottom:15%;
 `
 
 export const Separetor = styled.View`
@@ -18,7 +19,7 @@ export const Separetor = styled.View`
 `
 export const SeparetorText = styled.Text`
   font-size: 20px;
-  background-color: #f2f2f2;
+  background-color: #fff;
   text-align: center;
 
   width:50px;

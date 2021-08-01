@@ -14,7 +14,6 @@ function LoginSocial() {
         <S.SeparetorText>OU</S.SeparetorText>
       </S.Separetor>
 
-
       <S.Border>
         <S.Button>
             <S.AppleIcon  source={apple}/>
