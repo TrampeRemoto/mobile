@@ -7,6 +7,28 @@ export const Container = styled.View`
 
  width: 95%;
 `
+
+export const Separetor = styled.View`
+  height:2px;
+  background-color: #DEDEDE;
+  border-radius: 1px;
+
+  margin:35px 10%;
+  position:relative;
+`
+export const SeparetorText = styled.Text`
+  font-size: 20px;
+  background-color: #f2f2f2;
+  text-align: center;
+
+  width:50px;
+  position:absolute;
+  bottom:-12px;
+  left:50%;
+  transform: translateX(-25px);
+`
+
+
 export const Border = styled.View`
   border-style: solid;
   border-color: #999999;
@@ -37,7 +59,6 @@ export const Icon = styled.Image`
   height: 24px;
   position: absolute;
   left:20px;
-  /* bottom:18px; */
 `
 
 

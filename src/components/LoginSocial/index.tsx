@@ -10,6 +10,10 @@ import * as S from './styles'
 function LoginSocial() {
   return(
     <S.Container>
+      <S.Separetor>
+        <S.SeparetorText>OU</S.SeparetorText>
+      </S.Separetor>
+
 
       <S.Border>
         <S.Button>
