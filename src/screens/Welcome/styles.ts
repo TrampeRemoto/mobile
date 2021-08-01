@@ -1,6 +1,6 @@
 import styled from "styled-components/native";
 import { RectButton } from 'react-native-gesture-handler'
-import { Image } from "react-native";
+// import { Image } from "react-native";
 
 export const Container = styled.View`
     background: #18191F;
