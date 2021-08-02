@@ -1,8 +1,11 @@
 import styled from "styled-components/native";
+import {Dimensions} from 'react-native'
+const {height} = Dimensions.get('window')
 
 export const Container = styled.View`
     width: 100%;
-    height: 100%;
+    flex: 1;
+    min-height: ${height}px;
     background-color: #fff;
     display: flex;
     justify-content: center;

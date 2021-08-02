@@ -13,6 +13,7 @@ export const Container = styled.View`
 
 export const Label = styled.Text``
 export const Input = styled.TextInput`
+  flex: 1;
   font-size: 18px;
   color: #1C2439;
 `
