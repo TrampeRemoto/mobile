@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Formik } from "formik";
 import * as Yup from 'yup'
 
 import Input from "../Input";
 
 import * as S from './styles'
+import { TextInput } from "react-native";
 
 type registerInfo = {
   name:string
@@ -19,6 +20,8 @@ const schema = Yup.object().shape({
 })
 
 function RegisterForm() {
+  const emailInputRef = useRef<TextInput>(null);
+  const passwordInputRef = useRef<TextInput>(null);
 
   const handleRegister = (values:registerInfo)=>{
     console.log(values)
@@ -40,6 +43,11 @@ function RegisterForm() {
               onBlur={handleBlur('name')}
               value={values.name}
               error={errors.name}
+              
+              autoCorrect={false}
+              onSubmitEditing={()=>{
+                emailInputRef.current?.focus()
+              }}
             />
             <Input 
               placeholder="Email"
@@ -47,8 +55,19 @@ function RegisterForm() {
               onBlur={handleBlur('email')}
               value={values.email}
               error={errors.email}
+
+              autoCorrect={false}
+              ref={emailInputRef}
+              keyboardType="email-address"
+              onSubmitEditing={()=>{
+                passwordInputRef.current?.focus()
+              }}
             />
             <Input 
+              ref={passwordInputRef}
+              onSubmitEditing={()=>handleSubmit()}
+              returnKeyType="send"
+
               placeholder="Senha" 
               secureTextEntry
               onChangeText={handleChange('password')}

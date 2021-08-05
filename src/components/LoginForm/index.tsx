@@ -23,28 +23,10 @@ const schema = Yup.object().shape({
 
 function LoginForm() {
   const passwordInputRef = useRef<TextInput>(null);
-  const [userInfo,setUserInfo] = useState<LoginInfo>({
-    email:'',
-    password:''
-  })
 
   const handleLogin = useCallback(async(values:LoginInfo) => {
     console.log(values);
-    
-    
-
-    // try{
-    //   await schema.validate(userInfo)
-    //   console.log("sucesso");
-    // }catch(e){
-    //   console.log(e)
-    // }
   },[])
-
-  // const handleInputChange = (name:string, value:string) =>{
-  //   setUserInfo(s=> ({...s, [name]:value}))
-  // }
-
 
   return (
     <S.Container>
@@ -72,7 +54,7 @@ function LoginForm() {
             <Input 
               error={errors.password}
               ref={passwordInputRef}
-              placeholder="Senha" 
+              placeholder="Senha"
               secureTextEntry
               returnKeyType="send"
               onChangeText={handleChange('password')}
