@@ -23,3 +23,11 @@ export const ButtonText = styled.Text`
   color:#fff;
 `
 
+export const ForgotPassword = styled.Text`
+  color:#8A3AC8;
+  font-size: 16px;
+  padding:5px;
+  /* background-color: red; */
+  margin:10px auto 30px 0;
+`
+

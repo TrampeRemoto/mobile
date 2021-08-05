@@ -62,7 +62,11 @@ function LoginForm() {
               onBlur={handleBlur('password')}
               value={values.password}
             />
-          
+
+          <S.ForgotPassword onPress={()=>console.log("esqueci")}>
+            Esqueci minha senha
+          </S.ForgotPassword>
+
           <S.Button onPress={()=>handleSubmit()} >
             <S.ButtonText>Entrar</S.ButtonText>
           </S.Button>
