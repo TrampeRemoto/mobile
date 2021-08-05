@@ -6,13 +6,14 @@ import * as S from './styles'
 
 type InputProps = {
   active?:boolean
+  error?:string
 } & TextInputProps
 
 interface InputRefProps {
   focus():void
 }
 
-const Input:React.ForwardRefRenderFunction<InputRefProps,InputProps> = ({ ...rest}:InputProps,ref) => {
+const Input:React.ForwardRefRenderFunction<InputRefProps,InputProps> = ({error,active, ...rest}:InputProps,ref) => {
   const inputRef = useRef<any>(null)
   useImperativeHandle(ref,()=>({
     focus(){
@@ -21,9 +22,12 @@ const Input:React.ForwardRefRenderFunction<InputRefProps,InputProps> = ({ ...res
   }))
   
   return (
-    <S.Container>
-      <S.Input ref={inputRef} {...rest}/>
+    <>
+    <S.Container error={!!error}>
+      <S.Input ref={inputRef} {...rest} error={!!error} placeholderTextColor={error ?'#EA4335': '#1C2439'}/>
     </S.Container>
+    {error && <S.Error>{error}</S.Error>}
+    </>
   )
 }
 
